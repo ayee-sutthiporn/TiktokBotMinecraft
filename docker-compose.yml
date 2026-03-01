@@ -1,0 +1,25 @@
+services:
+  bot:
+    build: .
+    container_name: tiktok-mc-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    expose:
+      - "3000"
+    volumes:
+      - ./gifts.json:/app/gifts.json
+      - ./sessions.json:/app/sessions.json
+      - ./seen_gifts.json:/app/seen_gifts.json
+      - ./public/uploads:/app/public/uploads
+
+  nginx:
+    image: nginx:alpine
+    container_name: tiktok-mc-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - bot

@@ -12,12 +12,6 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                sh 'npm install'
-            }
-        }
-
         stage('Setup Environment') {
             steps {
                 withCredentials([
@@ -41,12 +35,30 @@ EOF
             }
         }
 
-        stage('Start Bot') {
+        stage('Ensure Data Files') {
             steps {
-                // หยุด process เดิมก่อน (ถ้ามี)
-                sh 'pkill -f "node src/index.js" || true'
-                // รันแบบ background
-                sh 'nohup node src/index.js > bot.log 2>&1 &'
+                sh '''
+                    [ -f sessions.json ] || echo "[]" > sessions.json
+                    [ -f seen_gifts.json ] || echo "{}" > seen_gifts.json
+                    mkdir -p public/uploads
+                '''
+            }
+        }
+
+        stage('Build & Deploy') {
+            steps {
+                sh 'docker compose down || true'
+                sh 'docker compose build --no-cache'
+                sh 'docker compose up -d'
+            }
+        }
+
+        stage('Health Check') {
+            steps {
+                sh '''
+                    sleep 5
+                    curl -f http://localhost/api/sessions || exit 1
+                '''
             }
         }
     }
@@ -57,6 +69,7 @@ EOF
         }
         failure {
             echo '❌ Deployment failed!'
+            sh 'docker compose logs --tail=50 || true'
         }
     }
 }
