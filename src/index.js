@@ -365,20 +365,22 @@ function stopSession(session) {
 
 // ---------- Boot ----------
 (async () => {
-  await connectRcon();
   loadSessions();
 
-  // Auto-start sessions that were active before shutdown
-  for (const session of sessions.values()) {
-    if (session.active) {
-      console.log(
-        `🔄 Auto-starting session: ${session.tiktokUsername} → ${session.playerName}`,
-      );
-      connectSession(session);
-    }
-  }
+  console.log("🚀 TikTok ⇄ Minecraft bridge is starting...");
 
-  console.log("🚀 TikTok ⇄ Minecraft bridge is running.");
+  // Connect RCON in background (don't block Express)
+  connectRcon().then(() => {
+    // Auto-start sessions after RCON is ready
+    for (const session of sessions.values()) {
+      if (session.active) {
+        console.log(
+          `🔄 Auto-starting session: ${session.tiktokUsername} → ${session.playerName}`,
+        );
+        connectSession(session);
+      }
+    }
+  });
 
   // ---------- Express Server ----------
   const app = express();
