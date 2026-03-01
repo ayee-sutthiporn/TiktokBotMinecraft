@@ -57,7 +57,7 @@ EOF
             steps {
                 sh '''
                     sleep 5
-                    curl -f http://localhost/api/sessions || exit 1
+                    curl -f http://localhost:8090/api/sessions || exit 1
                 '''
             }
         }
