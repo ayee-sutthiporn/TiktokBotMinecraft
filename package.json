@@ -1,0 +1,17 @@
+{
+  "name": "tiktok-mc-bot",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "multer": "^1.4.5-lts.1",
+    "rcon": "^1.1.0",
+    "tiktok-live-connector": "^2.1.0"
+  }
+}

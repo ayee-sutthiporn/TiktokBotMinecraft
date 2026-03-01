@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>จัดการของขวัญ TikTok Minecraft</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🎁 TikTok ⇄ Minecraft</h1>
+      </header>
+
+      <!-- ===== SESSION MANAGEMENT ===== -->
+      <section class="session-section">
+        <h2>🎮 จัดการ Sessions</h2>
+        <div class="session-form">
+          <input
+            type="text"
+            id="sessionTiktok"
+            placeholder="TikTok Username (เช่น _miyoomiyo)"
+          />
+          <input
+            type="text"
+            id="sessionPlayer"
+            placeholder="Minecraft Player (เช่น Steve)"
+          />
+          <button class="btn primary" id="addSessionBtn">+ เพิ่ม Session</button>
+        </div>
+        <div id="sessionList" class="session-list">
+          <!-- Sessions will be populated here -->
+        </div>
+      </section>
+
+      <!-- ===== GIFT MANAGEMENT ===== -->
+      <section class="add-gift-section">
+        <h2>เพิ่ม/แก้ไข ของขวัญ</h2>
+        <form id="giftForm">
+          <div class="form-group">
+            <label>เลือกจากที่เคยได้รับ (Optional)</label>
+            <select id="giftSelect" style="display: none"></select>
+            <div class="custom-select-wrapper">
+              <div class="custom-select">
+                <div class="custom-select__trigger">
+                  <span>-- เลือกของขวัญ --</span>
+                  <div class="arrow"></div>
+                </div>
+                <div class="custom-options">
+                  <!-- Options populated by JS -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="giftName">ชื่อของขวัญ (Gift Name)</label>
+            <input
+              type="text"
+              id="giftName"
+              placeholder="เช่น Rose, GG, Cap"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="quantity">จำนวน (Quantity)</label>
+            <input
+              type="number"
+              id="quantity"
+              placeholder="1"
+              value="1"
+              min="1"
+              required
+            />
+            <small>จำนวนครั้งที่จะทำคำสั่ง (เช่น 100 ตัว)</small>
+          </div>
+
+          <div class="form-group">
+            <label for="description">คำอธิบาย (แสดงบน Overlay)</label>
+            <input
+              type="text"
+              id="description"
+              placeholder="เช่น เสกซอมบี้, ให้เพชร"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>ประเภทของขวัญ (Gift Type)</label>
+            <div
+              class="radio-group"
+              style="display: flex; gap: 20px; margin-top: 5px"
+            >
+              <label
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  cursor: pointer;
+                "
+              >
+                <input type="radio" name="giftType" value="help" checked />
+                <span style="color: #10b981; font-weight: bold"
+                  >💚 Help (ช่วย)</span
+                >
+              </label>
+              <label
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  cursor: pointer;
+                "
+              >
+                <input type="radio" name="giftType" value="troll" />
+                <span style="color: #ef4444; font-weight: bold"
+                  >😈 Troll (แกล้ง)</span
+                >
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="rewardImage">รูปภาพรางวัล (แสดงบน Overlay)</label>
+            <input type="file" id="rewardImage" accept="image/*" />
+            <div id="imagePreview" class="image-preview"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="commands">คำสั่ง Minecraft (บรรทัดละ 1 คำสั่ง)</label>
+            <textarea
+              id="commands"
+              rows="5"
+              placeholder="say {sender} ส่งของขวัญให้ {player}!&#10;give {player} diamond {count}"
+              required
+            ></textarea>
+            <small
+              >ใช้ <code>{sender}</code> แทนชื่อผู้ส่ง,
+              <code>{count}</code> แทนจำนวน,
+              <code>{player}</code> แทนชื่อ Minecraft player ที่ผูกไว้</small
+            >
+          </div>
+          <div class="form-actions">
+            <button type="submit" id="saveBtn" class="btn primary">
+              บันทึก
+            </button>
+            <button
+              type="button"
+              id="cancelBtn"
+              class="btn secondary"
+              style="display: none"
+            >
+              ยกเลิก
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="gift-list-section">
+        <h2>รายการของขวัญที่มีอยู่ (<span id="giftCount">0</span>)</h2>
+        <div id="giftList" class="gift-grid">
+          <!-- Gift items will be populated here -->
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Overlay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+            background-color: transparent;
+            font-family: 'Kanit', sans-serif;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            /* Reduced gap between rows */
+        }
+
+        .section {
+            width: 100%;
+            overflow: hidden;
+            /* Hide scrollbars */
+        }
+
+        /* Row title removed */
+
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 10px;
+            /* Reduced gap between cards */
+            width: max-content;
+            animation: scroll 40s linear infinite;
+        }
+
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.4);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            border-radius: 16px;
+            padding: 8px;
+            /* Slightly reduced padding */
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            min-width: 100px;
+            /* Slightly reduced min-width */
+            backdrop-filter: blur(4px);
+        }
+
+        .card.help {
+            border-color: rgba(16, 185, 129, 0.6);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+        }
+
+        .card.troll {
+            border-color: rgba(239, 68, 68, 0.6);
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
+        }
+
+        .image-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reward-image {
+            width: 80px;
+            /* Slightly smaller images to fit more */
+            height: 80px;
+            object-fit: contain;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+        }
+
+        .fallback-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 6px 12px 35px 20px;
+            border-radius: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            white-space: nowrap
+        }
+
+        .tiktok-badge {
+            position: absolute;
+            bottom: -5px;
+            right: -5px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            padding: 2px;
+            /* background: rgba(255,255,255,0.2); */
+            z-index: 10;
+        }
+
+        .description-badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #fff;
+            margin-top: 4px;
+            padding: 2px 8px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 50px;
+            white-space: nowrap;
+        }
+
+        .quantity-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-weight: bold;
+            font-size: 1.0rem;
+            padding: 2px 6px;
+            border-radius: 50px;
+            /* box-shadow: 0 2px 4px rgba(0,0,0,0.3); */
+            z-index: 20;
+            /* border: 2px solid white; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section">
+        <div class="marquee-container">
+            <div id="help-track" class="marquee-track"></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="marquee-container">
+            <div id="troll-track" class="marquee-track"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = '/api/gifts';
+        const SEEN_GIFTS_URL = '/api/seen-gifts';
+        let lastDataHash = '';
+
+        async function updateOverlay() {
+            try {
+                const [giftsRes, seenRes] = await Promise.all([
+                    fetch(API_URL),
+                    fetch(SEEN_GIFTS_URL)
+                ]);
+
+                const gifts = await giftsRes.json();
+                const seenGifts = await seenRes.json();
+
+                // Simple hash to check if data changed
+                const currentDataHash = JSON.stringify(gifts) + JSON.stringify(seenGifts);
+                if (currentDataHash === lastDataHash) {
+                    return; // No changes, skip render to preserve animation state
+                }
+                lastDataHash = currentDataHash;
+
+                renderGifts(gifts, seenGifts);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        function renderGifts(gifts, seenGifts) {
+            const helpTrack = document.getElementById('help-track');
+            const trollTrack = document.getElementById('troll-track');
+
+            // Prepare data
+            const giftEntries = Object.keys(gifts).map(name => {
+                const giftData = gifts[name];
+                const seen = seenGifts[name] || seenGifts[Object.keys(seenGifts).find(k => k.toLowerCase() === name.toLowerCase())];
+                const diamondCount = seen ? (seen.diamondCount || 0) : 0;
+
+                let type = 'help';
+                if (!Array.isArray(giftData) && giftData.type) {
+                    type = giftData.type;
+                }
+
+                return { name, giftData, diamondCount, type };
+            });
+
+            // Split into categories
+            const helpGifts = giftEntries.filter(g => g.type === 'help').sort((a, b) => a.diamondCount - b.diamondCount);
+            const trollGifts = giftEntries.filter(g => g.type === 'troll').sort((a, b) => a.diamondCount - b.diamondCount);
+
+            // Render function
+            const createCardsHTML = (entries) => {
+                if (entries.length === 0) return '<div style="color:white; padding: 20px;"></div>'; // Empty if no gifts
+
+                let html = '';
+                entries.forEach(({ name, giftData, type }) => {
+                    let rewardImage = '';
+                    let description = '';
+                    let tiktokIcon = '';
+
+                    const seen = seenGifts[name] || seenGifts[Object.keys(seenGifts).find(k => k.toLowerCase() === name.toLowerCase())];
+                    if (seen && seen.icon) tiktokIcon = seen.icon;
+
+                    if (Array.isArray(giftData)) {
+                        rewardImage = tiktokIcon;
+                    } else {
+                        rewardImage = giftData.rewardImage;
+                        description = giftData.description;
+                        if (!rewardImage && !description && tiktokIcon) rewardImage = tiktokIcon;
+                    }
+
+                    // Card HTML
+                    html += `
+                        <div class="card ${type}">
+                            <div class="image-container">
+                                ${rewardImage
+                            ? `<img src="${rewardImage}" class="reward-image">`
+                            : (description ? `<div class="fallback-text">${description}</div>` : `<div style="font-size: 3rem;">🎁</div>`)
+                        }
+                                ${tiktokIcon && rewardImage !== tiktokIcon ? `<img src="${tiktokIcon}" class="tiktok-badge">` : ''}
+                                ${!Array.isArray(giftData) && giftData.quantity > 1 ? `<div class="quantity-badge">x${giftData.quantity}</div>` : ''}
+                            </div>
+                            ${description && rewardImage ? `<div class="description-badge">${description}</div>` : ''}
+                        </div>
+                    `;
+                });
+                return html;
+            };
+
+            // Set content - Duplicate for seamless marquee
+            const helpHTML = createCardsHTML(helpGifts);
+            const trollHTML = createCardsHTML(trollGifts);
+
+            // Only duplicate if we have items
+            helpTrack.innerHTML = helpGifts.length > 0 ? helpHTML + helpHTML : helpHTML;
+            trollTrack.innerHTML = trollGifts.length > 0 ? trollHTML + trollHTML : trollHTML;
+        }
+
+        // Initial load
+        updateOverlay();
+
+        // Poll every 5 seconds
+        setInterval(updateOverlay, 5000);
+    </script>
+</body>
+
+</html>

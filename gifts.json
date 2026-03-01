@@ -1,0 +1,507 @@
+{
+  "2026": {
+    "commands": [
+      "say §2🧟💨 {sender} เรียก Zombie Jockey (รุ่นติดเทอร์โบ) ออกมาไล่กวด!",
+      "execute at @p run summon chicken ~ ~ ~ {PersistenceRequired:1b,Attributes:[{Name:\"generic.movement_speed\",Base:0.5}],Passengers:[{id:\"minecraft:zombie\",IsBaby:1b,CustomName:\"§2§l{sender}\",CustomNameVisible:1b,PersistenceRequired:1b}]}",
+      "execute at @p run playsound entity.zombie.infect master @a"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1765718789674-Chicken_Jockey.webp",
+    "type": "troll",
+    "quantity": 1
+  },
+  "doughnut": {
+    "commands": [
+      "say §d🔥 {sender} เสก Blaze มาโจมตี!",
+      "execute at @p run summon blaze ~ ~ ~ {CustomName:\"§4§l{sender}\",CustomNameVisible:1b,PersistenceRequired:1b}",
+      "execute at @p run playsound block.note_block.bell master @a"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1763814935000-Blaze.webp",
+    "type": "troll"
+  },
+  "Galaxy": {
+    "commands": [
+      "say §5🌌 {sender} ปล่อยพลัง Galaxy ระเบิดจักรวาล!!!",
+      "execute at @p run summon tnt ~2 ~15 ~ {Fuse:60,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-2 ~20 ~ {Fuse:80,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~3 ~18 ~1 {Fuse:70,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-3 ~25 ~-1 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~ ~30 ~ {Fuse:100,CustomName:\"§d☄️ Heaven Blast\"}",
+      "execute at @p run summon lightning_bolt ~ ~ ~",
+      "execute at @p run summon lightning_bolt ~2 ~ ~2",
+      "execute at @p run summon lightning_bolt ~-2 ~ ~-2",
+      "execute at @p run summon tnt ~1 ~20 ~-2 {Fuse:70,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-1 ~18 ~3 {Fuse:60,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~2 ~25 ~2 {Fuse:80,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-2 ~22 ~-2 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~2 ~15 ~ {Fuse:60,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-2 ~20 ~ {Fuse:80,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~3 ~18 ~1 {Fuse:70,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-3 ~25 ~-1 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~ ~30 ~ {Fuse:100,CustomName:\"§d☄️ Heaven Blast\"}",
+      "execute at @p run summon lightning_bolt ~ ~ ~",
+      "execute at @p run summon lightning_bolt ~2 ~ ~2",
+      "execute at @p run summon lightning_bolt ~-2 ~ ~-2",
+      "execute at @p run summon tnt ~1 ~20 ~-2 {Fuse:70,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-1 ~18 ~3 {Fuse:60,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~2 ~25 ~2 {Fuse:80,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-2 ~22 ~-2 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~2 ~15 ~ {Fuse:60,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-2 ~20 ~ {Fuse:80,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~3 ~18 ~1 {Fuse:70,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-3 ~25 ~-1 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~ ~30 ~ {Fuse:100,CustomName:\"§d☄️ Heaven Blast\"}",
+      "execute at @p run summon lightning_bolt ~ ~ ~",
+      "execute at @p run summon lightning_bolt ~2 ~ ~2",
+      "execute at @p run summon lightning_bolt ~-2 ~ ~-2",
+      "execute at @p run summon tnt ~1 ~20 ~-2 {Fuse:70,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-1 ~18 ~3 {Fuse:60,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~2 ~25 ~2 {Fuse:80,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-2 ~22 ~-2 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~2 ~15 ~ {Fuse:60,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-2 ~20 ~ {Fuse:80,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~3 ~18 ~1 {Fuse:70,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-3 ~25 ~-1 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~ ~30 ~ {Fuse:100,CustomName:\"§d☄️ Heaven Blast\"}",
+      "execute at @p run summon wither ~ ~4 ~ {CustomName:\"§4§l『GALACTIC {sender}』\",CustomNameVisible:1b,PersistenceRequired:1b}",
+      "execute at @p run summon tnt ~2 ~15 ~ {Fuse:60,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-2 ~20 ~ {Fuse:80,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~3 ~18 ~1 {Fuse:70,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-3 ~25 ~-1 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~ ~30 ~ {Fuse:100,CustomName:\"§d☄️ Heaven Blast\"}",
+      "execute at @p run summon lightning_bolt ~ ~ ~",
+      "execute at @p run summon lightning_bolt ~2 ~ ~2",
+      "execute at @p run summon lightning_bolt ~-2 ~ ~-2",
+      "execute at @p run summon tnt ~1 ~20 ~-2 {Fuse:70,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-1 ~18 ~3 {Fuse:60,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~2 ~25 ~2 {Fuse:80,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-2 ~22 ~-2 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~2 ~15 ~ {Fuse:60,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-2 ~20 ~ {Fuse:80,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~3 ~18 ~1 {Fuse:70,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-3 ~25 ~-1 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~ ~30 ~ {Fuse:100,CustomName:\"§d☄️ Heaven Blast\"}",
+      "execute at @p run summon lightning_bolt ~ ~ ~",
+      "execute at @p run summon lightning_bolt ~2 ~ ~2",
+      "execute at @p run summon lightning_bolt ~-2 ~ ~-2",
+      "execute at @p run summon tnt ~1 ~20 ~-2 {Fuse:70,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-1 ~18 ~3 {Fuse:60,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~2 ~25 ~2 {Fuse:80,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-2 ~22 ~-2 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~2 ~15 ~ {Fuse:60,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-2 ~20 ~ {Fuse:80,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~3 ~18 ~1 {Fuse:70,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-3 ~25 ~-1 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~ ~30 ~ {Fuse:100,CustomName:\"§d☄️ Heaven Blast\"}",
+      "execute at @p run summon lightning_bolt ~ ~ ~",
+      "execute at @p run summon lightning_bolt ~2 ~ ~2",
+      "execute at @p run summon lightning_bolt ~-2 ~ ~-2",
+      "execute at @p run summon tnt ~1 ~20 ~-2 {Fuse:70,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-1 ~18 ~3 {Fuse:60,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~2 ~25 ~2 {Fuse:80,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-2 ~22 ~-2 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~2 ~15 ~ {Fuse:60,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-2 ~20 ~ {Fuse:80,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~3 ~18 ~1 {Fuse:70,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-3 ~25 ~-1 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~ ~30 ~ {Fuse:100,CustomName:\"§d☄️ Heaven Blast\"}",
+      "execute at @p run summon lightning_bolt ~ ~ ~",
+      "execute at @p run summon lightning_bolt ~2 ~ ~2",
+      "execute at @p run summon lightning_bolt ~-2 ~ ~-2",
+      "execute at @p run summon tnt ~1 ~20 ~-2 {Fuse:70,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-1 ~18 ~3 {Fuse:60,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~2 ~25 ~2 {Fuse:80,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-2 ~22 ~-2 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~2 ~15 ~ {Fuse:60,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-2 ~20 ~ {Fuse:80,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~3 ~18 ~1 {Fuse:70,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-3 ~25 ~-1 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~ ~30 ~ {Fuse:100,CustomName:\"§d☄️ Heaven Blast\"}",
+      "execute at @p run summon lightning_bolt ~ ~ ~",
+      "execute at @p run summon lightning_bolt ~2 ~ ~2",
+      "execute at @p run summon lightning_bolt ~-2 ~ ~-2",
+      "execute at @p run summon tnt ~1 ~20 ~-2 {Fuse:70,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-1 ~18 ~3 {Fuse:60,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~2 ~25 ~2 {Fuse:80,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-2 ~22 ~-2 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~2 ~15 ~ {Fuse:60,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-2 ~20 ~ {Fuse:80,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~3 ~18 ~1 {Fuse:70,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-3 ~25 ~-1 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~ ~30 ~ {Fuse:100,CustomName:\"§d☄️ Heaven Blast\"}",
+      "execute at @p run summon blaze ~2 ~ ~2 {CustomName:\"§6🔥 Cosmic Flame\"}",
+      "execute at @p run summon enderman ~-2 ~ ~-2 {CustomName:\"§5🌀 Void Wanderer\"}",
+      "execute at @p run summon vex ~ ~3 ~ {CustomName:\"§d⚔ Chaos Spirit\"}",
+      "execute at @p run particle portal ~ ~1 ~ 2 2 2 0.1 300",
+      "execute at @p run particle dragon_breath ~ ~1 ~ 2 2 2 0.05 300",
+      "execute at @p run particle explosion_emitter ~ ~1 ~ 1 1 1 0.05 100",
+      "execute at @p run particle sonic_explosion ~ ~2 ~ 1 1 1 0.1 60",
+      "execute at @p run particle flash ~ ~2 ~ 2 2 2 0.1 100",
+      "execute at @p run particle end_rod ~ ~2 ~ 2 2 2 0.05 200",
+      "execute at @p run effect give @a levitation 6 3 true",
+      "execute at @p run effect give @a blindness 5 1 true",
+      "execute at @p run effect give @a slowness 5 4 true",
+      "execute at @p run effect give @e[type=!player,distance=..20] instant_damage 1 255 true",
+      "execute at @p run playsound entity.ender_dragon.growl master @a",
+      "execute at @p run playsound entity.wither.spawn master @a",
+      "execute at @p run playsound entity.wither.death master @a",
+      "execute at @p run playsound entity.generic.explode master @a",
+      "execute at @p run playsound entity.lightning_bolt.thunder master @a",
+      "execute at @p run playsound entity.wither.ambient master @a",
+      "execute at @p run playsound entity.firework_rocket.large_blast_far master @a",
+      "execute at @p run playsound entity.elder_guardian.curse master @a"
+    ],
+    "description": "กาแล็กชี่ระบูด",
+    "rewardImage": "",
+    "type": "troll"
+  },
+  "TikTok": {
+    "commands": [
+      "say §b💀 {sender} เสก Skeleton มาโจมตี!",
+      "execute at @p run summon skeleton ~ ~ ~ {CustomName:\"§4§l{sender}\",CustomNameVisible:1b,PersistenceRequired:1b}",
+      "execute as @e[type=skeleton,tag=gangster,limit=1,sort=nearest] at @s run damage @s 0 minecraft:generic by @e[type=!player,team=green,limit=1,sort=nearest,distance=..50]",
+      "tag @e[tag=gangster] remove gangster",
+      "execute at @p run playsound block.note_block.bell master @a"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1763815447951-Skeleton_Without_Bow.webp",
+    "type": "troll",
+    "quantity": 1
+  },
+  "You're awesome": {
+    "commands": [
+      "say §b❄️ {sender} เรียก Snow Golem มาปกป้อง!",
+      "execute at @p run summon snow_golem ~ ~ ~ {CustomName:\"§2§l{sender}\",CustomNameVisible:1b,PersistenceRequired:1b}",
+      "execute at @p run playsound entity.enderman.teleport master @a"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1763815695770-Snow_Golem.webp",
+    "type": "help"
+  },
+  "GG": {
+    "commands": [
+      "say §b💎 {sender} ได้ให้เพชรจำนวน x1!",
+      "give @p diamond 1",
+      "execute at @p run playsound entity.player.levelup master @a"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1763815237225-Diamond_JE3_BE3.webp",
+    "type": "help"
+  },
+  "Ice Cream Cone": {
+    "commands": [
+      "say §c🧟 {sender} เสก Zombie มาโจมตี!",
+      "execute at @p run summon zombie ~ ~ ~ {CustomName:\"§4§l{sender}\",CustomNameVisible:1b,PersistenceRequired:1b}",
+      "execute at @p run playsound block.note_block.bell master @a"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1763815197391-Zombie_JE3_BE2.webp",
+    "type": "troll"
+  },
+  "Light": {
+    "commands": [
+      "say §e⚡ {sender} ได้ให้บัฟพลังความเร็วแสง!",
+      "effect give @p speed 30 2 true",
+      "effect give @p jump_boost 30 2 true",
+      "effect give @p glowing 30 1 true",
+      "execute at @p run playsound entity.player.levelup master @a"
+    ],
+    "description": "วิ่งเร็ว 30 วิ",
+    "rewardImage": ""
+  },
+  "Mishka Bear": {
+    "commands": [
+      "say §e🐻 {sender} เรียก Creeper พี่หมีระเบิดตู้ม!",
+      "execute at @p run summon creeper ~ ~ ~ {powered:1b,CustomName:\"§4§l{sender}\",CustomNameVisible:1b,PersistenceRequired:1b}",
+      "execute at @p run playsound entity.creeper.primed master @a"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1763815301018-Charged_Creeper_Animated.webp",
+    "type": "troll"
+  },
+  "Money Gun": {
+    "commands": [
+      "say §b💸 {sender} ยิง Money Gun แจกเงิน (พร้อมระเบิดสายฟ้า!)",
+      "execute at @p run summon tnt ~2 ~15 ~ {Fuse:60,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-2 ~20 ~ {Fuse:80,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~3 ~18 ~1 {Fuse:70,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-3 ~25 ~-1 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~ ~30 ~ {Fuse:100,CustomName:\"§d☄️ Heaven Blast\"}",
+      "execute at @p run summon lightning_bolt ~ ~ ~",
+      "execute at @p run summon lightning_bolt ~2 ~ ~2",
+      "execute at @p run summon lightning_bolt ~-2 ~ ~-2",
+      "execute at @p run summon tnt ~1 ~20 ~-2 {Fuse:70,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-1 ~18 ~3 {Fuse:60,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~2 ~25 ~2 {Fuse:80,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-2 ~22 ~-2 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~2 ~15 ~ {Fuse:60,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-2 ~20 ~ {Fuse:80,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~3 ~18 ~1 {Fuse:70,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-3 ~25 ~-1 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~ ~30 ~ {Fuse:100,CustomName:\"§d☄️ Heaven Blast\"}",
+      "execute at @p run summon lightning_bolt ~ ~ ~",
+      "execute at @p run summon lightning_bolt ~2 ~ ~2",
+      "execute at @p run summon lightning_bolt ~-2 ~ ~-2",
+      "execute at @p run summon tnt ~1 ~20 ~-2 {Fuse:70,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-1 ~18 ~3 {Fuse:60,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~2 ~25 ~2 {Fuse:80,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-2 ~22 ~-2 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~2 ~15 ~ {Fuse:60,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-2 ~20 ~ {Fuse:80,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~3 ~18 ~1 {Fuse:70,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-3 ~25 ~-1 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~ ~30 ~ {Fuse:100,CustomName:\"§d☄️ Heaven Blast\"}",
+      "execute at @p run summon lightning_bolt ~ ~ ~",
+      "execute at @p run summon lightning_bolt ~2 ~ ~2",
+      "execute at @p run summon lightning_bolt ~-2 ~ ~-2",
+      "execute at @p run summon tnt ~1 ~20 ~-2 {Fuse:70,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-1 ~18 ~3 {Fuse:60,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~2 ~25 ~2 {Fuse:80,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-2 ~22 ~-2 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~2 ~15 ~ {Fuse:60,CustomName:\"§6💥 Sky Bomb\"}",
+      "execute at @p run summon tnt ~-2 ~20 ~ {Fuse:80,CustomName:\"§c💣 Air Strike\"}",
+      "execute at @p run summon tnt ~3 ~18 ~1 {Fuse:70,CustomName:\"§4🔥 Meteor\"}",
+      "execute at @p run summon tnt ~-3 ~25 ~-1 {Fuse:90,CustomName:\"§5💀 Doom Drop\"}",
+      "execute at @p run summon tnt ~ ~30 ~ {Fuse:100,CustomName:\"§d☄️ Heaven Blast\"}",
+      "execute at @p run particle minecraft:explosion_emitter ~ ~1 ~ 1 1 1 0.1 150",
+      "execute at @p run particle minecraft:firework ~ ~1 ~ 1 1 1 0.2 100",
+      "execute at @p run particle minecraft:end_rod ~ ~1 ~ 1 1 1 0.1 200",
+      "execute at @p run particle minecraft:lava ~ ~1 ~ 1 1 1 0.05 100",
+      "execute at @p run playsound entity.lightning_bolt.thunder master @a",
+      "execute at @p run playsound entity.generic.explode master @a",
+      "execute at @p run playsound entity.firework_rocket.launch master @a",
+      "execute at @p run playsound entity.warden.sonic_boom master @a"
+    ],
+    "description": "ระบูด",
+    "rewardImage": "",
+    "type": "troll"
+  },
+  "Finger Heart": {
+    "commands": [
+      "say §d💖 {sender} ส่ง Finger Heart! ลอยขึ้นฟ้า!",
+      "execute at @p run effect give @p levitation 6 1 true",
+      "execute at @p run playsound block.beacon.activate master @a"
+    ],
+    "description": "บิน",
+    "rewardImage": "",
+    "type": "troll"
+  },
+  "Popular Vote": {
+    "commands": [
+      "say §a🍄 {sender} ส่งเห็ดน่ารัก~ แต่มีพิษนิดหน่อย!",
+      "execute at @p run effect give @p nausea 8 1 true",
+      "execute at @p run effect give @p blindness 8 1 true"
+    ],
+    "description": "หน้ามืด",
+    "rewardImage": "",
+    "type": "troll"
+  },
+  "Fest Gear": {
+    "commands": [
+      "say §a💚 {sender} เสก Slime มาโจมตี!",
+      "execute at @p run summon slime ~ ~1 ~ {Size:4,CustomName:\"§4§l{sender}\",CustomNameVisible:1b,PersistenceRequired:1b}",
+      "execute at @p run playsound block.note_block.bell master @a"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1763816304514-Slime_JE3_BE2.png",
+    "type": "troll",
+    "quantity": 3
+  },
+  "Little Crown": {
+    "commands": [
+      "say §7🪓 {sender} เรียก วุ้นร้อนยักษ์ มาโจมตี!",
+      "execute at @p run summon magma_cube ~ ~ ~ {Size:10,CustomName:\"§6§lวุ้นร้อนยักษ์ {sender}\",CustomNameVisible:1b,PersistenceRequired:1b,Attributes:[{Name:\"generic.max_health\",Base:500.0}],Health:500.0f}",
+      "execute at @p run playsound entity.enderman.teleport master @a"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1763815357470-Magma_Cube.webp",
+    "type": "troll"
+  },
+  "ANGKAN": {
+    "commands": [
+      "say §b💀 {sender} เสก Stray มาโจมตี! ",
+      "execute at @p run summon stray ~ ~ ~ {Tags:[\"new_mob\"],CustomName:\"§4§l{sender}\",CustomNameVisible:1b,PersistenceRequired:1b}",
+      "execute as @e[type=stray,tag=new_mob,limit=1,sort=nearest] run item replace entity @s weapon.mainhand with bow",
+      "execute at @p run playsound block.note_block.bell master @a"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1763837403217-Stray_JE2_BE4.webp",
+    "type": "troll"
+  },
+  "Meow": {
+    "commands": [
+      "say §6🔥 {sender} ได้ให้บัฟพลัง Lucky 9!",
+      "effect give @p strength 30 30 true",
+      "effect give @p resistance 30 20 true",
+      "effect give @p glowing 30 1 true",
+      "execute at @p run playsound entity.player.levelup master @a"
+    ],
+    "description": "เพิ่มพลังโจมตี 30 วิ",
+    "rewardImage": "",
+    "type": "help"
+  },
+  "Hand Heart": {
+    "commands": [
+      "say §b💀 {sender} เสก Skeleton มาโจมตี!",
+      "execute at @p run summon skeleton ~ ~ ~ {CustomName:\"§4§l{sender}\",CustomNameVisible:1b,PersistenceRequired:1b}",
+      "execute as @e[type=skeleton,tag=gangster,limit=1,sort=nearest] at @s run damage @s 0 minecraft:generic by @e[type=!player,team=green,limit=1,sort=nearest,distance=..50]",
+      "tag @e[tag=gangster] remove gangster",
+      "execute at @p run playsound block.note_block.bell master @a"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1764859263365-Skeleton_Without_Bow.webp",
+    "type": "troll",
+    "quantity": 150
+  },
+  "Whale diving": {
+    "commands": [
+      "say §b🎁 {sender} ส่ง Whale diving!",
+      "{CustomName:\"§4§l{sender}\",CustomNameVisible:1b,PersistenceRequired:1b}",
+      "execute at @p run playsound block.note_block.bell master @a"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1764945093655-Blaze.webp",
+    "type": "troll",
+    "quantity": 100
+  },
+  "Game Controller": {
+    "commands": [
+      "say §b🎁 {sender} ส่ง Game Controller!",
+      "execute as @p at @s run summon wolf ~ ~ ~ {CustomName:\"§b§l{sender}\",CustomNameVisible:1b,PersistenceRequired:1b,Tags:[\"tame_me\"],Age:-24000}",
+      "execute as @p run data modify entity @e[type=wolf,tag=tame_me,li"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1764947148271-Baby_Wolf_JE2_BE2.png",
+    "type": "help",
+    "quantity": 120
+  },
+  "Mark of Love": {
+    "commands": [
+      "say §b💀 {sender} เสก Zoglin มาโจมตี!",
+      "execute at @p run summon zoglin ~ ~ ~ {CustomName:\"§4§l{sender}\",CustomNameVisible:1b,PersistenceRequired:1b}",
+      "execute at @p run playsound block.note_block.bell master @a"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1763838582537-Zoglin.webp",
+    "type": "troll",
+    "quantity": 1
+  },
+  "Super GG": {
+    "commands": [
+      "say §c💥 {sender} ใช้พลังเคลียร์ศัตรูรอบตัว!",
+      "execute at @p run kill @e[type=zombie,distance=..20]",
+      "execute at @p run kill @e[type=skeleton,distance=..20]",
+      "execute at @p run kill @e[type=creeper,distance=..20]",
+      "execute at @p run kill @e[type=magma_cube,distance=..20]",
+      "execute at @p run kill @e[type=vex,distance=..20]",
+      "execute at @p run kill @e[type=slime,distance=..20]",
+      "execute at @p run kill @e[type=wither,distance=..20]",
+      "execute at @p run kill @e[type=blaze,distance=..20]",
+      "execute at @p run kill @e[type=spider,distance=..20]",
+      "execute at @p run kill @e[type=drowned,distance=..20]",
+      "execute at @p run kill @e[type=husk,distance=..20]",
+      "execute at @p run kill @e[type=zombified_piglin,distance=..20]",
+      "execute at @p run kill @e[type=stray,distance=..20]",
+      "execute at @p run kill @e[type=wither_skeleton,distance=..20]",
+      "execute at @p run kill @e[type=witch,distance=..20]",
+      "execute at @p run kill @e[type=phantom,distance=..20]",
+      "execute at @p run kill @e[type=enderman,distance=..20]",
+      "execute at @p run kill @e[type=cave_spider,distance=..20]",
+      "execute at @p run kill @e[type=silverfish,distance=..20]",
+      "execute at @p run kill @e[type=pillager,distance=..20]",
+      "execute at @p run kill @e[type=vindicator,distance=..20]",
+      "execute at @p run kill @e[type=evoker,distance=..20]",
+      "execute at @p run kill @e[type=ravager,distance=..20]",
+      "execute at @p run kill @e[type=ghast,distance=..20]",
+      "execute at @p run kill @e[type=guardian,distance=..20]",
+      "execute at @p run kill @e[type=elder_guardian,distance=..20]",
+      "execute at @p run kill @e[type=shulker,distance=..20]"
+    ],
+    "description": "เคลียร์ศัตรูรอบตัว ระยะ 20 บล็อก",
+    "rewardImage": "",
+    "type": "help",
+    "quantity": 1
+  },
+  "Rose": {
+    "commands": [
+      "say §d🌹 {sender} ได้ส่งเนื้อย่างจำนวน x1!",
+      "execute at @p run give @p cooked_beef 1",
+      "execute at @p run playsound entity.player.levelup master @a"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1765720978105-Steak_JE4_BE3.webp",
+    "type": "help",
+    "quantity": 1
+  },
+  "Corgi Christmas": {
+    "commands": [
+      "say §b🐶 {sender} เสกหมาแสนรู้!",
+      "execute as @p at @s run summon wolf ~ ~ ~ {CustomName:\"§b§l{sender}\",CustomNameVisible:1b,PersistenceRequired:1b,Tags:[\"tame_me\"]}",
+      "execute as @p run data modify entity @e[type=wolf,tag=tame_me,limit=1,sort=nearest] Owner set from entity @s UUID",
+      "tag @e[type=wolf,tag=tame_me,limit=1,sort=nearest] remove tame_me",
+      "execute at @p run playsound block.note_block.bell master @a"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1763814853187-Wolf_JE2_BE2.webp",
+    "type": "help",
+    "quantity": 2
+  },
+  "Christmas Wreath": {
+    "commands": [
+      "say §7🪓 {sender} เรียกวิญญาณ!",
+      "execute at @p run summon vex ~ ~ ~ {CustomName:\"§d§l{sender}\",CustomNameVisible:1b,PersistenceRequired:1b}",
+      "execute at @p run playsound entity.enderman.teleport master @a"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1763817156642-Vex_JE4.gif",
+    "type": "troll",
+    "quantity": 1
+  },
+  "Rosa": {
+    "commands": [
+      "say §b💎 {sender} ได้ให้แอปเปิ้ลทอง x1!",
+      "give @p enchanted_golden_apple 1",
+      "execute at @p run playsound entity.player.levelup master @a"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1763839121972-Enchanted_Golden_Apple_JE2_BE2.webp",
+    "type": "help",
+    "quantity": 1
+  },
+  "Magic Elf Dust": {
+    "commands": [
+      "say §b🐶 {sender} เสกลูกหมาแสนรู้!",
+      "execute as @p at @s run summon wolf ~ ~ ~ {CustomName:\"§b§l{sender}\",CustomNameVisible:1b,PersistenceRequired:1b,Tags:[\"tame_me\"],Age:-24000}",
+      "execute as @p run data modify entity @e[type=wolf,tag=tame_me,limit=1,sort=nearest] Owner set from entity @s UUID",
+      "tag @e[type=wolf,tag=tame_me,limit=1,sort=nearest] remove tame_me",
+      "execute at @p run playsound block.note_block.bell master @a"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1764689928494-Baby_Wolf_JE2_BE2.png",
+    "type": "help",
+    "quantity": 1
+  },
+  "Paper Crane": {
+    "commands": [
+      "say §5🎲 {sender} เรียก Air Drop เสี่ยงโชค! (มาลุ้นกันว่าข้างในมีอะไร?)",
+      "execute at @p run summon chicken ~ ~30 ~ {PersistenceRequired:1b,Passengers:[{id:\"minecraft:chest_minecart\",CustomName:\"§5§lMystery Drop\",CustomNameVisible:1b,LootTable:\"minecraft:chests/end_city_treasure\"}]}",
+      "execute at @p run playsound entity.firework_rocket.launch master @a"
+    ],
+    "description": "Air Drop เสี่ยงโชค!",
+    "rewardImage": "/uploads/1765720695065-Chest.webp",
+    "type": "help",
+    "quantity": 1
+  },
+  "Level-up Sparks": {
+    "commands": [
+      "say §7🪓 {sender} เรียก Iron Golem มาปกป้อง!",
+      "execute at @p run summon iron_golem ~ ~ ~ {CustomName:\"§2§l{sender}\",CustomNameVisible:1b,PersistenceRequired:1b}",
+      "execute at @p run playsound entity.enderman.teleport master @a"
+    ],
+    "description": "",
+    "rewardImage": "/uploads/1763814800879-Iron_Golem_JE2_BE2.webp",
+    "type": "help",
+    "quantity": 1
+  }
+}
