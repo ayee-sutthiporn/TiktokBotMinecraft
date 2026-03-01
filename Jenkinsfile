@@ -47,9 +47,12 @@ EOF
 
         stage('Build & Deploy') {
             steps {
-                sh 'docker compose down || true'
-                sh 'docker compose build --no-cache'
-                sh 'docker compose up -d'
+                sh '''
+                    docker compose down --remove-orphans || true
+                    docker rm -f tiktok-mc-bot tiktok-mc-nginx || true
+                    docker compose build --no-cache
+                    docker compose up -d
+                '''
             }
         }
 
@@ -57,7 +60,7 @@ EOF
             steps {
                 sh '''
                     sleep 5
-                    curl -f http://localhost:8090/api/sessions || exit 1
+                    curl -f http://localhost:8091/api/sessions || exit 1
                 '''
             }
         }
