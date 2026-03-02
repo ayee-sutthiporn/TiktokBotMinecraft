@@ -2,6 +2,7 @@ const API_URL = "/api/gifts";
 const SEEN_GIFTS_URL = "/api/seen-gifts";
 const UPLOAD_URL = "/api/upload";
 const SESSIONS_URL = "/api/sessions";
+const KEY_USAGE_URL = "/api/key-usage";
 
 const giftForm = document.getElementById("giftForm");
 const giftNameInput = document.getElementById("giftName");
@@ -39,11 +40,87 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Load sessions
     fetchSessions();
 
+    // Load key usage
+    fetchKeyUsage();
+
     console.log("✅ Data loaded");
   } catch (error) {
     console.error("❌ Error loading initial data:", error);
   }
 });
+
+// ========== KEY USAGE ==========
+const keyUsageListEl = document.getElementById("keyUsageList");
+const refreshKeyUsageBtn = document.getElementById("refreshKeyUsage");
+
+async function fetchKeyUsage() {
+  try {
+    const response = await fetch(KEY_USAGE_URL);
+    const data = await response.json();
+    renderKeyUsage(data);
+  } catch (error) {
+    console.error("Error fetching key usage:", error);
+    keyUsageListEl.innerHTML = `<div class="key-usage-loading">❌ ไม่สามารถโหลดข้อมูลได้</div>`;
+  }
+}
+
+function renderKeyUsage(keys) {
+  if (!keys || keys.length === 0) {
+    keyUsageListEl.innerHTML = `<div class="key-usage-loading">ไม่พบ API Key</div>`;
+    return;
+  }
+
+  keyUsageListEl.innerHTML = keys
+    .map((k) => {
+      if (k.status === "error") {
+        return `
+          <div class="key-usage-card error">
+            <div class="key-usage-title">🔑 Key #${k.index} <span class="key-preview">${k.keyPreview}</span></div>
+            <div class="key-usage-error">❌ ${k.error}</div>
+          </div>`;
+      }
+
+      // Build limit bars for daily, hourly, minute
+      const limits = [];
+      if (k.day) limits.push({ label: "รายวัน", ...k.day });
+      if (k.hour) limits.push({ label: "รายชั่วโมง", ...k.hour });
+      if (k.minute) limits.push({ label: "รายนาที", ...k.minute });
+
+      const barsHtml = limits
+        .map((l) => {
+          const max = l.max || 0;
+          const remaining = l.remaining ?? max;
+          const used = max - remaining;
+          const pct = max > 0 ? Math.round((used / max) * 100) : 0;
+          const barColor =
+            pct >= 90 ? "#ef4444" : pct >= 60 ? "#f59e0b" : "#10b981";
+
+          return `
+            <div class="key-usage-limit">
+              <div class="key-usage-limit-label">
+                <span>${l.label}</span>
+                <span class="key-usage-limit-nums">${used} / ${max} ใช้แล้ว (เหลือ ${remaining})</span>
+              </div>
+              <div class="key-usage-bar-bg">
+                <div class="key-usage-bar-fill" style="width:${pct}%; background:${barColor}"></div>
+              </div>
+            </div>`;
+        })
+        .join("");
+
+      return `
+        <div class="key-usage-card">
+          <div class="key-usage-title">🔑 Key #${k.index} <span class="key-preview">${k.keyPreview}</span></div>
+          ${barsHtml}
+        </div>`;
+    })
+    .join("");
+}
+
+refreshKeyUsageBtn.addEventListener("click", () => fetchKeyUsage());
+
+// Auto-refresh every 60 seconds
+setInterval(fetchKeyUsage, 60000);
 
 // ========== SESSION MANAGEMENT ==========
 const sessionTiktokInput = document.getElementById("sessionTiktok");

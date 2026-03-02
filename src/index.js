@@ -639,6 +639,39 @@ function stopSession(session) {
     res.json({ success: true, active: session.active });
   });
 
+  // ========== API KEY USAGE ==========
+
+  // API: Get usage/rate-limits for each EulerStream API key
+  app.get("/api/key-usage", async (req, res) => {
+    const EULER_BASE =
+      process.env.SIGN_API_URL || "https://tiktok.eulerstream.com";
+
+    const results = await Promise.all(
+      EULERSTREAM_API_KEYS.map(async (key, index) => {
+        try {
+          const url = `${EULER_BASE}/webcast/rate_limits?apiKey=${encodeURIComponent(key)}`;
+          const response = await fetch(url);
+          const data = await response.json();
+          return {
+            index: index + 1,
+            keyPreview: key.slice(0, 15) + "...",
+            status: "ok",
+            ...data,
+          };
+        } catch (e) {
+          return {
+            index: index + 1,
+            keyPreview: key.slice(0, 15) + "...",
+            status: "error",
+            error: e?.message || String(e),
+          };
+        }
+      }),
+    );
+
+    res.json(results);
+  });
+
   function saveGifts() {
     try {
       fs.writeFileSync(
